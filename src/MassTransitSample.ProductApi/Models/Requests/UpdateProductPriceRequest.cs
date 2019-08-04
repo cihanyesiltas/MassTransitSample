@@ -1,10 +1,8 @@
-using MassTransitSample.Contracts.Commands;
-
 namespace MassTransitSample.ProductApi.Models.Requests
 {
-    public class UpdateProductPriceRequest:IUpdateProductPriceCommand
+    public class UpdateProductPriceRequest
     {
-        public int ProductId { get; }
-        public decimal Price { get; }
+        public int ProductId { get; set; }
+        public decimal Price { get; set; }
     }
 }

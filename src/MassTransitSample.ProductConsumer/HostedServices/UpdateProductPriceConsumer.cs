@@ -9,7 +9,7 @@ namespace MassTransitSample.ProductConsumer.HostedServices
 {
     public class UpdateProductPriceConsumer : IConsumer<IUpdateProductPriceCommand>
     {
-        private IProductService _productService;
+        private readonly IProductService _productService;
 
         public UpdateProductPriceConsumer(IProductService productService)
         {
@@ -28,7 +28,7 @@ namespace MassTransitSample.ProductConsumer.HostedServices
 
             if (response != null)
             {
-                Console.WriteLine($"UpdateProductPriceConsumer: ProductId: {response.ProductId} Price: {response.ProductId} updated");
+                Console.WriteLine($"UpdateProductPriceConsumer: ProductId: {response.ProductId} Price: {response.Price} updated");
             }
         }
     }
